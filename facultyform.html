@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <titleForm validation</title>
+<script>
+function validate()
+{ 
+const username=document.getElementById('username');
+const email=document.getElementById('email');
+const Password=document.getElementById('password');
+const ConfirmPassword=document.getElementById('password2');
+const RollNo=document.getElementById('RollNo');
+if (username==null || username=="")
+{ 
+alert("Full Name can't be blank"); 
+return false; 
+}
+else if (email==null || email=="")
+{ 
+alert("Email can't be blank"); 
+return false; 
+}
+else if (RollNo==null || RollNo=="")
+{ 
+alert("RollNo can't be blank"); 
+return false; 
+}
+else if(Password.length&amp;lt;6)
+{ 
+alert("Password must be at least 6 characters long."); 
+return false; 
+} 
+else if (ConfirmPassword!=Password)
+{ 
+alert("Confirm Password should match with the Password"); 
+return false; 
+} 
+} 
+</script> </head>
+<body>
+
+<div class="container">
+    <form name="register" action="faculty.php" method="post" onsubmit="return validate();" id="form" class="form" autocomplete="off">
+        <h2>Registeration</h2>
+        <div class="form-control">
+            <label for="username">Username</label>
+            <input type="text" name="Username1" id="username" placeholder="Enter username">
+            <small>Error message</small>
+        </div>
+
+ <div class="form-control">
+            <label for="email">Email</label>
+            <input type="text" id="email" name="Email1" placeholder="Enter email">
+            <small>Error message</small>
+        </div>
+        <div class="form-control">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="Password1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"placeholder="Enter password">
+            <small>Error message</small>
+        </div>
+        <div class="form-control">
+            <label for="password2">Confirm Passsword</label>
+            <input type="password" id="password2" name="ConfirmPassword1"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Enter password again">
+            <small>Error message</small>
+        </div>
+        <button name="save"   type=submit>Sign Up</button>
+
+<p align="center">--------or----------</p>
+
+<div class="text-center">Already have an account? <a href="facultylogin.html">Sign in</a></div>
+</form>
+</div>
+<script src="app.js">
+</script>
+
+</body>
+</html>

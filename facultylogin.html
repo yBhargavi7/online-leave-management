@@ -1,0 +1,35 @@
+<?php
+
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Form validation</title>
+</head>
+<body>
+
+<div class="container">
+    <form action="login.php" method="post" id="form" class="form" autocomplete="off">
+        <h2>LOGIN</h2>
+    <?php if (isset($_GET['error'])) { ?>
+
+            <p class="error"><?php echo $_GET['error']; ?></p>
+
+        <?php } ?>
+        <div class="form-control">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"placeholder="Enter password" required>
+            <small>Error message</small>
+        </div>
+<button type="submit "onclick="window.open('admin.php')">Login</button>
+    </form>
+</div>
+<script src="facultylogin.js">
+</script>
+</body>
+</html>
